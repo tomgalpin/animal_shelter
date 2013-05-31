@@ -1,11 +1,10 @@
-class Pets
-  attr_accessor :name, :type, :toys, :owner, :healthy
+class Pet
+  attr_accessor :name, :type, :toys, :healthy
 
-  def initialize(name, type, toys, owner, healthy)
+  def initialize(name, type, toys, healthy)
     @name = name
     @type = type
-    @toys = []
-    @owner = owner
+    @toys = toys
     @healthy = healthy
   end
 
@@ -19,14 +18,14 @@ class Pets
 
   def healthy?
     if @healthy == true
-      return "healthy"
+      return "a healthy"
     else
-      return "unhealthy"
+      return "an unhealthy"
     end
   end
 
   def to_s
-    "This is #{@name}, a #{type}, and their favorite toy is a #{@toys} and it is #{healthy?}"
+    "This is #{@name}, #{healthy?} #{type}, and their favorite toy is a #{@toys}."
   end
 
 end
